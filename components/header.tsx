@@ -28,11 +28,13 @@ export default function Header(){
                 sm:flex-nowrap sm:gap-5'>
                     {
                  links.map((link) =>(
-                    <li className='flex w-full items-center justify-center px-3 py-3
-                    hover:text-gray-950' key={link.hash}>
-                        <Link href={link.hash}>{link.name}</Link>
+                    <motion.li className='flex w-full items-center justify-center px-3 py-3
+                    hover:text-gray-950' key={link.hash}
+                    initial={{y:-100, opacity:0}}
+                    animate={{y:0, opacity:1}}>
+                        <Link className='flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transistion' href={link.hash}>{link.name}</Link>
                     
-                    </li>
+                    </motion.li>
                  )
                  )
                   }
